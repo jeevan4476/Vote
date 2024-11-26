@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{\"components/solana/solana-provider.tsx -> @solana/wallet-adapter-react-ui\":{\"id\":\"components/solana/solana-provider.tsx -> @solana/wallet-adapter-react-ui\",\"files\":[\"static/chunks/_app-pages-browser_node_modules_pnpm_solana_wallet-adapter-react-ui_0_9_35__solana_web3_js_1_-a51b48.js\"]}}"
+self.__REACT_LOADABLE_MANIFEST='{"components/solana/solana-provider.tsx -> @solana/wallet-adapter-react-ui":{"id":8732,"files":["static/chunks/563.f708029f6035b909.js"]}}';
