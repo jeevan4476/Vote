@@ -1,92 +1,95 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/wFAkMYEB)
-![School of Solana](https://github.com/Ackee-Blockchain/school-of-solana/blob/master/.banner/banner.png?raw=true)
 
-## 📚Solana Program
-We are more than halfway through the course, and you already have some experience with programming on Solana. It is time to create something on your own! You will be building a dApp that will serve as the culmination of everything you have learned so far. Feel free to implement whatever comes to your mind, (as long as it passes the requirements) it may result in a truly great idea!
+# votee
 
-**This does not mean that the School of Solana is coming to an end just yet!** There are still several exciting lectures ahead, as well as one final task.
+## Getting Started
 
-### Task details
-This task consists of two parts:
-1. **Core of your dApp**
-    - A deployed Solana program.
-2. **Frontend**
-    - A simple frontend to interact with the dApp.
+### Prerequisites
 
+- Node v18.18.0 or higher
 
-### Requirements
-- An Anchor program deployed on **Devnet** or **Mainnet**.
-- The Anchor program must use a PDA (Program Derived Address).
-- At least one TypeScript **test** for each Anchor program instruction. These tests should cover both **happy** and **unhappy** (intentional error-triggering) scenarios.
-- A simple **frontend** deployed using your preferred provider (for more info, check below).
-- A **README.md** file that contains:
-    - A brief **description of your project**, explaining how it works and its purpose.
-    - If you have successfully deployed both the Anchor program and the frontend, include a **link** where we can view the results.
-    - Instructions on **how to build and test** your Anchor program locally.
-    - Instructions on **how to run the frontend** app locally (this is optional for those who deploy frontend).
+- Rust v1.77.2 or higher
+- Anchor CLI 0.30.1 or higher
+- Solana CLI 1.18.17 or higher
 
-### Ideas
-We highly recommended starting with something simple. Take time to think through your project and work on it in iterations. Do not try to implement everything at once!
+### Installation
 
-Below is a list of few ideas to get you started:
-- **Social app**
-    - Twitter
-    - Instagram
-    - Giphy
-    - Friendtech
-    - Spotify
-- **Blog**
-- **Voting** ([D21 - Janeček method](https://www.ih21.org/en/guidelines))
-- **DeFi**
-    - Crowdfunding
-    - Raffles
-    - Escrow
-    - Tipping
-    - Lending ([Save Documentation](https://docs.save.finance/))
-    - Liquid Staking ([Marinade Documentation](https://docs.marinade.finance/))
-    - Data Query with Pyth ([Pyth Documentation](https://docs.pyth.network/price-feeds))
-    - AMM ([Raydium Documentation](https://raydium.gitbook.io/raydium/))
-- **Gaming**
-    - Browser Game ([Gaming on Solana](https://solanacookbook.com/gaming/nfts-in-games.html#nfts-in-games))
+#### Clone the repo
 
-### Deadline
-The deadline for this task is **Wednesday, November 27th, 2024 23:59 UTC**.
->[!CAUTION]
->Note that we will not accept submissions after the deadline.
+```shell
+git clone <repo-url>
+cd <repo-name>
+```
 
-### Submission
-There are two folders, one for the Anchor project, and the second one for the frontend. Feel free to update this structure if you need to. If you make any significant changes to the structure, please describe them in the project description.
+#### Install Dependencies
 
+```shell
+pnpm install
+```
 
-### Evaluation
-The evaluation process is based on the **requirements**. If you meet the requirements, you pass the task!
+#### Start the web app
 
-### Example Workflow
-Let's say you are going to implement the Twitter dApp as the Solana Program. Here's how the steps could look:
+```
+pnpm dev
+```
 
-**1.** Implement Twitter dApp using the Anchor framework.
+## Apps
 
-**2.** Test the Twitter dApp using the Anchor framework.
+### anchor
 
-**3.** Deploy the Twitter dApp on the Solana Devnet.
+This is a Solana program written in Rust using the Anchor framework.
 
-**4.** Using the Solana Scaffold template, implement frontend for the Twitter dApp.
+#### Commands
 
-**5.** Publish Frontend using [Vercel](https://vercel.com).
+You can use any normal anchor commands. Either move to the `anchor` directory and run the `anchor` command or prefix the command with `pnpm`, eg: `pnpm anchor`.
 
-**6.** Describe dApp within the readme (Frontend + Anchor project).
+#### Sync the program id:
 
-**7.** Submit the Twitter dApp using GitHub Classroom.
+Running this command will create a new keypair in the `anchor/target/deploy` directory and save the address to the Anchor config file and update the `declare_id!` macro in the `./src/lib.rs` file of the program.
 
-### Useful Links
-- [Vercel](https://vercel.com)
-- [Solana dApp Scaffold](https://github.com/solana-labs/dapp-scaffold#solana-dapp-scaffold-next)
-- [Account Macro Constraints](https://docs.rs/anchor-lang/latest/anchor_lang/derive.Accounts.html#constraints)
-- [Metaplex Documentation](https://docs.metaplex.com/)
-- [Solana Developers Courses](https://solana.com/developers/courses)
+You will manually need to update the constant in `anchor/lib/counter-exports.ts` to match the new program id.
 
------
+```shell
+pnpm anchor keys sync
+```
 
-### Need help?
->[!TIP]
->If you have any questions, feel free to reach out to us on [Discord](https://discord.gg/z3JVuZyFnp).
+#### Build the program:
+
+```shell
+pnpm anchor-build
+```
+
+#### Start the test validator with the program deployed:
+
+```shell
+pnpm anchor-localnet
+```
+
+#### Run the tests
+
+```shell
+pnpm anchor-test
+```
+
+#### Deploy to Devnet
+
+```shell
+pnpm anchor deploy --provider.cluster devnet
+```
+
+### web
+
+This is a React app that uses the Anchor generated client to interact with the Solana program.
+
+#### Commands
+
+Start the web app
+
+```shell
+pnpm dev
+```
+
+Build the web app
+
+```shell
+pnpm build
+```
