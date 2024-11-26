@@ -1,5 +1,4 @@
-
-# votee
+# solana-voting-app
 
 ## Getting Started
 
