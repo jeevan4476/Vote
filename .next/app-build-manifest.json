@@ -1,95 +1,30 @@
 {
   "pages": {
-    "/_not-found/page": [
-      "static/chunks/webpack-7f12e173766c04bc.js",
-      "static/chunks/a41d6982-051c0128e3333b0f.js",
-      "static/chunks/292-7e72385b2cda50e2.js",
-      "static/chunks/main-app-c86451c0c7bae707.js",
-      "static/chunks/app/_not-found/page-0a2cab0a66035b6a.js"
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
     ],
     "/layout": [
-      "static/chunks/webpack-7f12e173766c04bc.js",
-      "static/chunks/a41d6982-051c0128e3333b0f.js",
-      "static/chunks/292-7e72385b2cda50e2.js",
-      "static/chunks/main-app-c86451c0c7bae707.js",
-      "static/css/e371cabec6d95ba0.css",
-      "static/css/34a72a2dfc6ca7d9.css",
-      "static/chunks/dc6bf408-24dc344ae092e3dd.js",
-      "static/chunks/994098e5-7f7932934bc862f4.js",
-      "static/chunks/273acdc0-99d4eaa5d9163878.js",
-      "static/chunks/268-58cc6f33a2840957.js",
-      "static/chunks/259-c2f42f31813e95fe.js",
-      "static/chunks/851-200f4ce50c6d8404.js",
-      "static/chunks/559-5b92d9cbf9401e67.js",
-      "static/chunks/app/layout-a3595df4e89872af.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
     ],
-    "/account/[address]/page": [
-      "static/chunks/webpack-7f12e173766c04bc.js",
-      "static/chunks/a41d6982-051c0128e3333b0f.js",
-      "static/chunks/292-7e72385b2cda50e2.js",
-      "static/chunks/main-app-c86451c0c7bae707.js",
-      "static/css/34a72a2dfc6ca7d9.css",
-      "static/chunks/dc6bf408-24dc344ae092e3dd.js",
-      "static/chunks/994098e5-7f7932934bc862f4.js",
-      "static/chunks/273acdc0-99d4eaa5d9163878.js",
-      "static/chunks/268-58cc6f33a2840957.js",
-      "static/chunks/259-c2f42f31813e95fe.js",
-      "static/chunks/559-5b92d9cbf9401e67.js",
-      "static/chunks/app/account/[address]/page-1ad8e35d539e42e8.js"
+    "/create/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/create/page.js"
     ],
-    "/clusters/page": [
-      "static/chunks/webpack-7f12e173766c04bc.js",
-      "static/chunks/a41d6982-051c0128e3333b0f.js",
-      "static/chunks/292-7e72385b2cda50e2.js",
-      "static/chunks/main-app-c86451c0c7bae707.js",
-      "static/css/34a72a2dfc6ca7d9.css",
-      "static/chunks/dc6bf408-24dc344ae092e3dd.js",
-      "static/chunks/994098e5-7f7932934bc862f4.js",
-      "static/chunks/273acdc0-99d4eaa5d9163878.js",
-      "static/chunks/268-58cc6f33a2840957.js",
-      "static/chunks/259-c2f42f31813e95fe.js",
-      "static/chunks/559-5b92d9cbf9401e67.js",
-      "static/chunks/app/clusters/page-ae2129240e60379e.js"
+    "/polls/[pollId]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/polls/[pollId]/page.js"
     ],
-    "/page": [
-      "static/chunks/webpack-7f12e173766c04bc.js",
-      "static/chunks/a41d6982-051c0128e3333b0f.js",
-      "static/chunks/292-7e72385b2cda50e2.js",
-      "static/chunks/main-app-c86451c0c7bae707.js",
-      "static/css/34a72a2dfc6ca7d9.css",
-      "static/chunks/dc6bf408-24dc344ae092e3dd.js",
-      "static/chunks/994098e5-7f7932934bc862f4.js",
-      "static/chunks/273acdc0-99d4eaa5d9163878.js",
-      "static/chunks/268-58cc6f33a2840957.js",
-      "static/chunks/259-c2f42f31813e95fe.js",
-      "static/chunks/559-5b92d9cbf9401e67.js",
-      "static/chunks/app/page-803749e6459359b6.js"
-    ],
-    "/solanavotingapp/page": [
-      "static/chunks/webpack-7f12e173766c04bc.js",
-      "static/chunks/a41d6982-051c0128e3333b0f.js",
-      "static/chunks/292-7e72385b2cda50e2.js",
-      "static/chunks/main-app-c86451c0c7bae707.js",
-      "static/css/34a72a2dfc6ca7d9.css",
-      "static/chunks/dc6bf408-24dc344ae092e3dd.js",
-      "static/chunks/994098e5-7f7932934bc862f4.js",
-      "static/chunks/273acdc0-99d4eaa5d9163878.js",
-      "static/chunks/268-58cc6f33a2840957.js",
-      "static/chunks/259-c2f42f31813e95fe.js",
-      "static/chunks/559-5b92d9cbf9401e67.js",
-      "static/chunks/app/solanavotingapp/page-ebc722fed974de40.js"
-    ],
-    "/account/page": [
-      "static/chunks/webpack-7f12e173766c04bc.js",
-      "static/chunks/a41d6982-051c0128e3333b0f.js",
-      "static/chunks/292-7e72385b2cda50e2.js",
-      "static/chunks/main-app-c86451c0c7bae707.js",
-      "static/css/34a72a2dfc6ca7d9.css",
-      "static/chunks/dc6bf408-24dc344ae092e3dd.js",
-      "static/chunks/994098e5-7f7932934bc862f4.js",
-      "static/chunks/273acdc0-99d4eaa5d9163878.js",
-      "static/chunks/268-58cc6f33a2840957.js",
-      "static/chunks/app/account/page-9108ed92a3fc7b6a.js"
+    "/_not-found/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/_not-found/page.js"
     ]
   }
 }
