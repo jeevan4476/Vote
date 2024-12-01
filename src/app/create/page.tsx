@@ -87,10 +87,24 @@ const Page: NextPage = () => {
         <h2 className="bg-gray-800 text-white rounded-full px-6 py-2 text-lg font-bold">
           Create Poll
         </h2>
+        <Form
+          formData={formData}
+          setFormData={setFormData}
+          program={program}
+          isInitialized={isInitialized}
+          handleSubmit={handleSubmit}
+        />
+      </div>
+    </div>
+  )
+}
 
-        <form
-          className="bg-white border border-gray-300 rounded-2xl
-        shadow-lg p-6 w-4/5 md:w-2/5 space-y-6"
+export default Page
+
+function Form({ formData, setFormData, program, isInitialized, handleSubmit }) {
+  return(
+    <form
+          className="rounded-lg glass-effect  border border-purple-100/50 dark:border-purple-900/50 shadow-lg shadow-purple-500/20 p-6 w-4/5 md:w-2/5 space-y-6 dark:shadow-purple-500/10 "
           onSubmit={handleSubmit}
         >
           <div>
@@ -168,9 +182,5 @@ const Page: NextPage = () => {
             </button>
           </div>
         </form>
-      </div>
-    </div>
   )
 }
-
-export default Page

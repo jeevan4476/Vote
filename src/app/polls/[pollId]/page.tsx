@@ -42,6 +42,7 @@ export default function PollDetails() {
   if (!poll) {
     return (
       <div className="flex flex-col items-center py-10">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.05]" />
         <h2 className="text-gray-700 text-lg font-semibold">
           Loading poll details...
         </h2>
@@ -51,6 +52,7 @@ export default function PollDetails() {
 
   return (
     <>
+      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.05]" />
       <div className="flex flex-col items-center py-10 space-y-6">
         <h2 className="bg-gray-800 text-white rounded-full px-6 py-2 text-lg font-bold">
           Poll Details

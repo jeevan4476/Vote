@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className='min-h-screen flex flex-col'>
       <ThemeProvider
           attribute="class"
@@ -36,10 +36,11 @@ export default function RootLayout({
             <AppWalletProvider>
               <Header />
               <main className="flex-1">{children}</main>
-             <Footer />
+             
             </AppWalletProvider>
           </Provider>
         </ReactQueryProvider>
+        <Footer />
       </ThemeProvider>
       </body>
     </html>

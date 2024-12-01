@@ -20,7 +20,7 @@ const Header = () => {
     animate={{ y: 0, opacity: 1 }}
     className="sticky top-0 z-50 backdrop-blur-lg border-b border-purple-100/50 dark:border-purple-900/50"
   >
-    <div className="absolute inset-0 bg-gradient-to-r from-purple-100/50 via-blue-50/30 to-pink-100/50 dark:from-purple-900/30 dark:via-blue-900/20 dark:to-pink-900/30" />
+    <div className="absolute inset-0  bg-gradient-to-r from-purple-100/50 via-blue-50/30 to-pink-100/50 dark:from-purple-900/30 dark:via-blue-900/20 dark:to-pink-900/30" />
     <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.05]" />
     <nav className="container relative mx-auto px-4 h-16 flex items-center justify-between">
       <Link href="/" className="flex items-center space-x-2 group">
@@ -35,7 +35,7 @@ const Header = () => {
         </span>
       </Link>
       
-      <div className="flex items-center space-x-8">
+      <div className="flex items-center space-x-8 ">
         <NavLink href="/create">Create</NavLink>
         {isMounted && (
         <WalletMultiButton />
@@ -57,7 +57,7 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
       href={href} 
       className="relative group"
     >
-      <span className="text-gray-700 dark:text-gray-200 font-medium transition-colors group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:via-blue-500 group-hover:to-pink-500">
+      <span className=" dark:text-gray-200 font-medium transition-colors group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:via-blue-500 group-hover:to-pink-500">
         {children}
       </span>
       <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-600 via-blue-500 to-pink-500 transition-all group-hover:w-full" />
