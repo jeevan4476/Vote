@@ -3,7 +3,7 @@
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-
+import { Vote } from 'lucide-react'
 const Header = () => {
   const [isMounted, setIsMounted] = useState(false)
 
@@ -12,26 +12,28 @@ const Header = () => {
   }, [])
 
   return (
-    <header className="p-4 border-b border-gray-300 mb-4">
-      <nav className="flex justify-between items-center max-w-6xl mx-auto">
-        <div className="flex justify-start items-center space-x-8">
-          <Link href="/">
-            <h4 className="text-black text-2xl font-extrabold">Votee</h4>
+    <header className="border-b">
+      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+        <div className="flex items-center space-x-2">
+          <Vote className="h-6 w-6" />
+          <Link href="/" className="text-xl font-bold">
+            Votee
           </Link>
-
-          <div className="flex justify-start items-center space-x-2">
-            <Link href={'/create'}>Create</Link>
-          </div>
         </div>
-
-        {isMounted && (
-          <WalletMultiButton
-            style={{ backgroundColor: '#F97316', color: 'white' }}
-          />
-        )}
-      </nav>
+        <nav className="flex items-center space-x-4">
+          <Link href="/create" className="text-gray-600 hover:text-gray-900">
+            Create
+          </Link>
+          {isMounted && (
+  <WalletMultiButton
+    style={{ backgroundColor: '#F97316', color: 'white' }}
+  />
+)}
+        </nav>
+      </div>
     </header>
   )
 }
 
 export default Header
+

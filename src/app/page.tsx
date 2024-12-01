@@ -55,8 +55,8 @@ export default function Page() {
       }),
       {
         pending: 'Approve transaction...',
-        success: 'Transaction successful 👌',
-        error: 'Encountered error 🤯',
+        success: 'Transaction successful ',
+        error: 'Encountered error ',
       }
     )
   }
