@@ -106,7 +106,7 @@ const Page: NextPage = () => {
               placeholder="Briefly describe the purpose of this poll..."
               required
               className="mt-2 block w-full py-3 px-4 border border-gray-300
-              rounded-lg shadow-sm focus:ring-2 focus:ring-black
+              rounded-lg shadow-sm focus:ring-2 ring-black  
               focus:outline-none bg-gray-100 text-gray-800"
               value={formData.description}
               onChange={(e) =>

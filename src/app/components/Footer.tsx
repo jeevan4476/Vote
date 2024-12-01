@@ -1,14 +1,23 @@
-import { Facebook, Instagram, Twitter, Github, Globe } from "lucide-react";
+import { Twitter, Github, Globe } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export function Footer() {
   return (
-    <header className="border-t mt-auto">
-      <div className="container mx-auto px-4 py-6">
+    <header className="relative border-t border-purple-100/50 dark:border-purple-900/50 mt-auto">
+      <div className="absolute inset-0  bg-gradient-to-b from-purple-50/30 via-blue-50/20 to-pink-50/30 mx-auto  dark:from-purple-900/30 dark:via-blue-900/20 dark:to-pink-900/30 px-4 py-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="text-sm text-gray-600">
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="  border-purple-100/50  text-lg  bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500 "
+          >
             Done for Ackee
-          </div>
+            by
+            -_-
+          </motion.div> 
+
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link href={
                 "https://x.com/JeevanR43715457"
