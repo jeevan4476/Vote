@@ -1,39 +1,40 @@
-import { Twitter, Github, Globe } from "lucide-react";
-import Link from "next/link";
+"use client";
+
 import { motion } from "framer-motion";
+import { Github, Twitter, Linkedin } from "lucide-react";
 
 export function Footer() {
-  return (
-    <header className="relative border-t border-purple-100/50 dark:border-purple-900/50 mt-auto">
-      <div className="absolute inset-0  bg-gradient-to-b from-purple-50/30 via-blue-50/20 to-pink-50/30 mx-auto  dark:from-purple-900/30 dark:via-blue-900/20 dark:to-pink-900/30 px-4 py-6">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="  border-purple-100/50  text-lg  bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500 "
-          >
-            Done for Ackee
-            by
-            -_-
-          </motion.div> 
+  const currentYear = new Date().getFullYear();
 
-          <div className="flex space-x-4 mt-4 md:mt-0">
-            <Link href={
-                "https://x.com/JeevanR43715457"
-            }>
-            <Twitter className="h-5 w-5 text-gray-600 hover:text-gray-900 cursor-pointer"  />
-            </Link>
-            <Link
-            href={
-                "https://github.com/jeevan4476"
-            }>
-            <Github className="h-5 w-5 text-gray-600 hover:text-gray-900 cursor-pointer" />            
-            </Link>
-            <Globe className="h-5 w-5 text-gray-600 hover:text-gray-900 cursor-pointer" />
+  return (
+    <footer className="border-t border-purple-100/50 dark:border-purple-900/50 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm">
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="text-sm dark:text-gray-300">
+            Vote  
+          </div>
+          
+          <div className="flex space-x-6">
+            <SocialLink href="https://github.com/jeevan4476" icon={<Github size={20} />} />
+            <SocialLink href="https://x.com/JeevanR43715457" icon={<Twitter size={20} />} />          
           </div>
         </div>
       </div>
-    </header>
+    </footer>
+  );
+}
+
+function SocialLink({ href, icon }: { href: string; icon: React.ReactNode }) {
+  return (
+    <motion.a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      {icon}
+    </motion.a>
   );
 }

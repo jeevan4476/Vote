@@ -73,17 +73,14 @@ export default function Page() {
   }
 
   return (
-    <div className="flex flex-col items-center py-10">
+    <div className="flex-1 relative">
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-100/50 via-blue-50/30 to-pink-100/50 dark:from-purple-900/30 dark:via-blue-900/20 dark:to-pink-900/30" />
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.05]" />
-      {isInitialized && polls.length > 0 && (
-        <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-500 to-pink-500">
-          List of Polls
-        </h2>
-      )}
+      
 
       {isInitialized && polls.length < 1 && (
         <>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-500 to-pink-500">
+          <h2 className="text-4xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-500 to-purple-500">
             List of Polls
           </h2>
           <p>We don&apos;t have any polls yet, be the first to create one.</p>
@@ -102,18 +99,29 @@ export default function Page() {
 
       {!publicKey && polls.length < 1 && (
         <>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-500 to-pink-500">
+          <h2 className="text-4xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-500 to-purple-500">
             List of Polls
           </h2>
           <p>We don&apos;t have any polls yet, please connect wallet.</p>
         </>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-4/5">
-        {polls.map((poll) => (
-          <FeatureCard poll={poll} key={poll.publicKey} />
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="relative container mx-auto px-4 py-8"
+      >
+        <h1 className="text-4xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-500 to-pink-500">
+          List of Polls
+        </h1>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' >
+        {polls.filter(poll => poll.end > Date.now()).map((poll, index) => (
+          <FeatureCard poll={poll} key={index} />
         ))}
-      </div>
+        
+        </div>
+      </motion.div>
     </div>
   )
 }
@@ -125,7 +133,7 @@ function FeatureCard({ poll } : { poll: PollType }) {
     <motion.div
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="p-6 rounded-lg glass-effect border border-purple-100/50 dark:border-purple-900/50 shadow-lg hover:shadow-purple-500/20 dark:shadow-purple-500/10 transition-all duration-300"
+      className=" p-6 rounded-lg glass-effect border border-purple-100/50 dark:border-purple-900/50 shadow-lg hover:shadow-purple-500/20 dark:shadow-purple-500/10 transition-all duration-300"
       key={poll.publicKey}
       >
       <h3 className="text-xl font-semibold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500">
@@ -135,7 +143,7 @@ function FeatureCard({ poll } : { poll: PollType }) {
       </h3>
       <p className="text-gray-700 dark:text-gray-300">
       <span className="font-semibold">Starts:</span>{' '}
-      {new Date(poll.end).toLocaleString()}
+      {new Date(poll.start).toLocaleString()}
       </p>
       <p className="text-gray-700 dark:text-gray-300">
       <span className="font-semibold">Ends:</span>{' '}

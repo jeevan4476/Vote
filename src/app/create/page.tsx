@@ -10,6 +10,9 @@ import {
   getProvider,
 } from '../services/blockchain.service'
 import { useWallet } from '@solana/wallet-adapter-react'
+import { Vote } from 'lucide-react'
+import { motion } from 'framer-motion'
+import Form from '../components/PollForm'
 
 const Page: NextPage = () => {
   const { publicKey, sendTransaction, signTransaction } = useWallet()
@@ -81,106 +84,36 @@ const Page: NextPage = () => {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <div className="h-16"></div>
-      <div className="flex flex-col justify-center items-center space-y-6 w-full">
-        <h2 className="bg-gray-800 text-white rounded-full px-6 py-2 text-lg font-bold">
+    
+
+<div className="min-h-screen bg-gradient-to-br from-purple-100/50 via-blue-50/30 to-pink-100/50 dark:from-purple-900/30 dark:via-blue-900/20 dark:to-pink-900/30">
+<div className="container mx-auto px-4 py-8">
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    className="max-w-2xl mx-auto"
+  >
+    <div className="bg-white dark:bg-gray-900 rounded-xl shadow-xl p-6 border border-purple-100/50 dark:border-purple-900/50">
+      <div className="flex items-center justify-center mb-6">
+        <Vote className="h-8 w-8 text-purple-600 mr-2" />
+        <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-500 to-pink-500">
           Create Poll
-        </h2>
-        <Form
+        </h1>
+      </div>
+      <Form
           formData={formData}
           setFormData={setFormData}
           program={program}
           isInitialized={isInitialized}
           handleSubmit={handleSubmit}
         />
-      </div>
     </div>
+  </motion.div>
+</div>
+</div>
   )
 }
 
 export default Page
 
-function Form({ formData, setFormData, program, isInitialized, handleSubmit }) {
-  return(
-    <form
-          className="rounded-lg glass-effect  border border-purple-100/50 dark:border-purple-900/50 shadow-lg shadow-purple-500/20 p-6 w-4/5 md:w-2/5 space-y-6 dark:shadow-purple-500/10 "
-          onSubmit={handleSubmit}
-        >
-          <div>
-            <label
-              htmlFor="description"
-              className="block text-sm font-semibold text-gray-700"
-            >
-              Poll Description
-            </label>
-            <input
-              type="text"
-              id="description"
-              placeholder="Briefly describe the purpose of this poll..."
-              required
-              className="mt-2 block w-full py-3 px-4 border border-gray-300
-              rounded-lg shadow-sm focus:ring-2 ring-black  
-              focus:outline-none bg-gray-100 text-gray-800"
-              value={formData.description}
-              onChange={(e) =>
-                setFormData({ ...formData, description: e.target.value })
-              }
-            />
-          </div>
-
-          <div>
-            <label
-              htmlFor="startDate"
-              className="block text-sm font-semibold text-gray-700"
-            >
-              Start Date
-            </label>
-            <input
-              type="datetime-local"
-              id="startDate"
-              required
-              className="mt-2 block w-full py-3 px-4 border border-gray-300
-              rounded-lg shadow-sm focus:ring-2 focus:ring-black
-              focus:outline-none bg-gray-100 text-gray-800"
-              value={formData.startDate}
-              onChange={(e) =>
-                setFormData({ ...formData, startDate: e.target.value })
-              }
-            />
-          </div>
-
-          <div>
-            <label
-              htmlFor="endDate"
-              className="block text-sm font-semibold text-gray-700"
-            >
-              End Date
-            </label>
-            <input
-              type="datetime-local"
-              id="endDate"
-              required
-              className="mt-2 block w-full py-3 px-4 border border-gray-300
-              rounded-lg shadow-sm focus:ring-2 focus:ring-black
-              focus:outline-none bg-gray-100 text-gray-800"
-              value={formData.endDate}
-              onChange={(e) =>
-                setFormData({ ...formData, endDate: e.target.value })
-              }
-            />
-          </div>
-
-          <div className="flex justify-center w-full">
-            <button
-              type="submit"
-              disabled={!program || !isInitialized}
-              className="bg-black text-white font-bold py-3 px-6 rounded-lg
-              hover:bg-gray-900 transition duration-200 w-full disabled:bg-opacity-70"
-            >
-              Create Poll
-            </button>
-          </div>
-        </form>
-  )
-}

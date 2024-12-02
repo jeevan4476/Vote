@@ -52,9 +52,8 @@ export default function PollDetails() {
 
   return (
     <>
-      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.05]" />
       <div className="flex flex-col items-center py-10 space-y-6">
-        <h2 className="bg-gray-800 text-white rounded-full px-6 py-2 text-lg font-bold">
+        <h2 className="text-4xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-500 to-pink-500">
           Poll Details
         </h2>
 
