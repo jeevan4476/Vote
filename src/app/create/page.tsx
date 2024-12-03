@@ -86,7 +86,7 @@ const Page: NextPage = () => {
   return (
     
 
-<div className="min-h-screen bg-gradient-to-br from-purple-100/50 via-blue-50/30 to-pink-100/50 dark:from-purple-900/30 dark:via-blue-900/20 dark:to-pink-900/30">
+<div className="h-full bg-gradient-to-br from-purple-100/50 via-blue-50/30 to-pink-100/50 dark:from-10% dark:from-slate-900 dark:via-70%  dark:via-neutral-800 dark:to-90%    dark:to-pink-900 ">
 <div className="container mx-auto px-4 py-8">
   <motion.div
     initial={{ opacity: 0, y: 20 }}
@@ -94,13 +94,13 @@ const Page: NextPage = () => {
     transition={{ duration: 0.5 }}
     className="max-w-2xl mx-auto"
   >
-    <div className="bg-white dark:bg-gray-900 rounded-xl shadow-xl p-6 border border-purple-100/50 dark:border-purple-900/50">
+    <div className="bg-white dark:bg-gray-900 rounded-xl shadow-xl p-6 border border-purple-100/50 dark:border-purple-900/50 dark:shadow-lg dark:shadow-purples-900">
       <div className="flex items-center justify-center mb-6">
         <Vote className="h-8 w-8 text-purple-600 mr-2" />
-        <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-500 to-pink-500">
+        <h1 className="text-2xl font-bold text-center  bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-500 to-purple-500">
           Create Poll
         </h1>
-      </div>
+      </div >
       <Form
           formData={formData}
           setFormData={setFormData}

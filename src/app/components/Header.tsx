@@ -18,9 +18,9 @@ const Header = () => {
     <motion.header
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      className="sticky top-0 z-50 backdrop-blur-lg border-b border-purple-100/50 dark:border-purple-900/50"
+      className="sticky top-0 z-50 backdrop-blur-lg border-b border-purple-100/50 dark:border-purple-900 dark:shadow-sm dark:shadow-orange-100"
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-100/50 via-blue-50/30 to-pink-100/50 dark:from-purple-900/30 dark:via-blue-900/20 dark:to-pink-900/30" />
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-100/50 via-blue-50/30 to-pink-100/50 dark:from-neutral-900 dark:via-gray-900/100 dark:to-neutral-900/100" />
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.05]" />
       <nav className="container relative mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">

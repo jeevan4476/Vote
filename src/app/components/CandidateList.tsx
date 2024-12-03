@@ -65,7 +65,7 @@ const CandidateList = ({ candidates, pollAddress, pollId }: Props) => {
   }
 
   return (
-    <div className="bg-white border border-gray-300 rounded-xl shadow-lg p-6 w-4/5 md:w-3/5 space-y-4 text-center">
+    <div className="bg-white  rounded-lg border  dark:border-purple-900/50 hover:shadow-purple-500/20 dark:shadow-purple-500/10 shadow-xl p-6 w-4/5 md:w-3/5 space-y-4 text-center glass- transition-all duration-300 ">
       <div className="space-y-2">
         {candidates.map((candidate) => (
           <div
@@ -74,6 +74,8 @@ const CandidateList = ({ candidates, pollAddress, pollId }: Props) => {
           >
             <span className="text-gray-800 font-medium">{candidate.name}</span>
             <span className="text-gray-600 text-sm flex items-center space-x-2">
+            <span className="font-semibold">{candidate.votes} votes</span>
+              
               <button
                 onClick={() => handleVote(candidate)}
                 className={`px-2 py-1 bg-${voted ? 'red' : 'green'}-100 text-${
@@ -82,7 +84,6 @@ const CandidateList = ({ candidates, pollAddress, pollId }: Props) => {
                 disabled={voted || !publicKey}
               >
                 {voted ? 'Voted' : 'Vote'}{' '}
-                <span className="font-semibold">{candidate.votes}</span>
               </button>
             </span>
           </div>

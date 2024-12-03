@@ -22,7 +22,7 @@ function Form({ formData, setFormData, program, isInitialized, handleSubmit }: F
             <div className="space-y-2 ">
               <label
                 htmlFor="description"
-                className="block text-sm font-semibold text-gray-700"
+                className="block text-sm font-semibold text-gray-700 dark:text-white"
               >
                 Poll Description
               </label>
@@ -42,7 +42,7 @@ function Form({ formData, setFormData, program, isInitialized, handleSubmit }: F
             <div className="pt-4">
               <label
                 htmlFor="startDate"
-                className="block text-sm font-semibold text-gray-700 pb-2"
+                className="block text-sm font-semibold text-gray-700 pb-2 dark:text-white"
               >
                 Start Date
               </label>
@@ -61,7 +61,7 @@ function Form({ formData, setFormData, program, isInitialized, handleSubmit }: F
             <div className="pt-4">
               <label
                 htmlFor="endDate"
-                className="block text-sm font-semibold text-gray-700 pb-2"
+                className="block text-sm font-semibold text-gray-700 pb-2 dark:text-white"
               >
                 End Date
               </label>
@@ -81,7 +81,7 @@ function Form({ formData, setFormData, program, isInitialized, handleSubmit }: F
               <button
                 type="submit"
                 disabled={!program || !isInitialized}
-                className=" border-2 text-white border-blue-300 hover:border-blue-400 hover:ring-offset-2 hover:shadow-blue-500/50 hover:ring-2 p-2 rounded-lg text-2xl font-bold bg-gradient-to-br from-purple-300 via-blue-400 to-purple-300"
+                className=" border-2 text-white border-blue-300 hover:border-blue-400 hover:ring-offset-2 hover:shadow-blue-500/50 hover:ring-2 p-2 rounded-lg text-2xl font-bold bg-gradient-to-r from-purple-900 via-blue-400 to-purple-900"
               >
                 Create Poll
               </button>

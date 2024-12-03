@@ -71,10 +71,10 @@ const RegCandidate = ({
       className={`fixed top-0 left-0 w-screen h-screen flex items-center justify-center
       bg-black bg-opacity-50 transform z-[3000] transition-transform duration-300 ${regModal}`}
     >
-      <div className="bg-white shadow-lg shadow-slate-900 rounded-xl w-11/12 md:w-2/5 h-7/12 p-6">
+      <div className="bg-white shadow-lg shadow-purple-900 rounded-xl w-11/12 md:w-2/5 h-7/12 p-6">
         <form className="space-y-6" onSubmit={handleSubmit}>
           <div className="flex flex-row justify-between items-center">
-            <p className="block text-sm font-semibold text-gray-700">
+            <p className="block text-sm font-bold text-purple-700">
               Candidate Name
             </p>
             <button
@@ -92,9 +92,10 @@ const RegCandidate = ({
               id="description"
               placeholder="Briefly describe the purpose of this poll..."
               required
-              className="mt-2 block w-full py-3 px-4 border border-gray-300
-              rounded-lg shadow-sm focus:ring-2 focus:ring-black
-              focus:outline-none bg-gray-100 text-gray-800"
+              className="mt-2 block w-full py-3 px-4 border-2 border-purple-300
+              
+              rounded-lg shadow-sm focus:ring-2 focus:ring-purple-600
+              focus:outline-none bg-gray-100 text-black"
               value={candidateName}
               onChange={(e) => setCandidateName(e.target.value)}
             />
@@ -104,8 +105,8 @@ const RegCandidate = ({
             <button
               type="submit"
               disabled={!program || !publicKey}
-              className="bg-black text-white font-bold py-3 px-6 rounded-lg
-              hover:bg-gray-900 transition duration-200 w-full disabled:bg-opacity-70"
+              className="bg-purple-500 text-white font-bold py-3 px-6 rounded-lg
+              hover:bg-purple-900 transition duration-200 w-full disabled:bg-opacity-70"
             >
               Register
             </button>
