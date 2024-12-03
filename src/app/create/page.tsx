@@ -13,8 +13,10 @@ import { useWallet } from '@solana/wallet-adapter-react'
 import { Vote } from 'lucide-react'
 import { motion } from 'framer-motion'
 import Form from '../components/PollForm'
+import { useRouter } from 'next/router'
 
 const Page: NextPage = () => {
+  const router = useRouter()
   const { publicKey, sendTransaction, signTransaction } = useWallet()
   const [nextCount, setNextCount] = useState<BN>(new BN(0))
   const [isInitialized, setIsInitialized] = useState(false)
@@ -70,6 +72,7 @@ const Page: NextPage = () => {
 
           console.log(tx)
           resolve(tx as any)
+
         } catch (error) {
           console.error('Transaction failed:', error)
           reject(error)
