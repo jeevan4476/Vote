@@ -73,7 +73,7 @@ export default function Page() {
   }
 
   return (
-    <div className="flex-1 relative">
+    <div className="flex-1 relative h-full">
       <div className="absolute inset-0 bg-gradient-to-br from-purple-100/50 via-blue-50/30 to-pink-100/50 dark:from-10% dark:from-slate-900 dark:via-70%  dark:via-neutral-800 dark:to-90%    dark:to-pink-900  " />
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.05]"/>
       
@@ -109,9 +109,9 @@ export default function Page() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="relative container mx-auto px-4 py-8"
+        className="relative container mx-auto px-4 py-8 "
       >
-        <h1 className="text-4xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-500 to-purple-500">
+        <h1 className="text-4xl font-bold text-center mb-8  bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-500 to-purple-500">
             List of Polls
           </h1>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' >

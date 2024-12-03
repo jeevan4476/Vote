@@ -50,17 +50,3 @@ export default Header
 
 
 
-
-// function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
-//   return (
-//     <Link 
-//       href={href} 
-//       className="relative group"
-//     >
-//       <span className=" dark:text-gray-200 font-medium transition-colors group-hover:text-transparent bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:via-blue-500 group-hover:to-pink-500">
-//         {children}
-//       </span>
-//       <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-600 via-blue-500 to-pink-500 transition-all group-hover:w-full" />
-//     </Link>
-//   );
-// }
