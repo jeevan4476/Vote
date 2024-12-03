@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 import { Vote } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { ThemeToggle } from './Theme-toggle'
-import { Button } from '../ui/button'
+// import { Button } from '../ui/button'
 const Header = () => {
   const [isMounted, setIsMounted] = useState(false)
 
@@ -32,9 +32,9 @@ const Header = () => {
         
         <div className="flex items-center space-x-4">
           <Link href="/create">
-            <Button className="bg-gradient-to-r from-purple-600 via-blue-500 to-pink-500 text-white hover:opacity-90">
+            <button className="bg-gradient-to-r rounded-lg p-2 from-purple-600 via-blue-500 to-pink-500 text-white hover:opacity-90">
               Create
-            </Button>
+            </button>
           </Link>
           {isMounted && (
   <WalletMultiButton />
