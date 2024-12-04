@@ -48,7 +48,9 @@ This is a Solana program written in Rust using the Anchor framework.
 #### Commands
 
 You can use any normal anchor commands. Either move to the `anchor` directory and run the `anchor` command or prefix the command with `pnpm`, eg: `pnpm anchor`.
-
+Added intentional error, in the sense when you run `anchor test` commond totaly 6 test will get executed in which three are happy and rest are unhappy 
+the unhappy will end up in error as expected, 
+so three test will pass and rest will fail 
 #### Sync the program id:
 
 Running this command will create a new keypair in the `anchor/target/deploy` directory and save the address to the Anchor config file and update the `declare_id!` macro in the `./src/lib.rs` file of the program.
